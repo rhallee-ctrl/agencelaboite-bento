@@ -1,0 +1,69 @@
+---
+// Section temoignage client : note 5 etoiles + citation + auteur
+const stars = [1, 2, 3, 4, 5];
+---
+
+<section class="px-[5%] py-16 md:py-24 lg:py-28">
+  <div class="container">
+    <div class="mb-12 w-full md:mb-18 lg:mb-20">
+      <h1 class="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+        Customer testimonials
+      </h1>
+      <p class="md:text-md">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+    <div
+      class="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-8 lg:gap-x-12 lg:gap-y-16"
+    >
+      <div
+        class="flex h-full max-w-lg flex-col items-start justify-start text-left"
+      >
+        <div class="mb-6 flex md:mb-8">
+          {
+            stars.map(() => (
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                class="size-6"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z" />
+              </svg>
+            ))
+          }
+        </div>
+        <blockquote class="text-md font-bold leading-[1.4] md:text-xl">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare."
+        </blockquote>
+        <div class="mt-6 flex w-full flex-col md:mt-8 md:w-auto">
+          <div class="mb-4">
+            <img
+              src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
+              alt="Testimonial avatar 1"
+              class="size-14 min-h-14 min-w-14 rounded-full object-cover"
+            />
+          </div>
+          <div class="mb-3 md:mb-4">
+            <p class="font-semibold">Name Surname</p>
+            <p>Position, Company name</p>
+          </div>
+          <div class="hidden w-px self-stretch bg-black md:block"></div>
+          <div>
+            <img
+              src="https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg"
+              alt="Webflow logo 1"
+              class="max-h-12"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

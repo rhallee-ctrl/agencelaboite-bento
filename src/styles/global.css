@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Couleurs de base de la page, identiques au theme Relume :
+   fond blanc, texte noir. */
+body {
+  @apply bg-background-primary text-text-primary;
+}

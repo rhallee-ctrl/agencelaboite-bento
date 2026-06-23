@@ -1,0 +1,162 @@
+---
+// Section "Beauce" : image fixe (sticky) au centre, blocs de texte de chaque cote.
+// Note : dans Relume ces blocs apparaissent en fondu au defilement (opacity:0 au depart).
+// Comme on ne veut pas d'animation pour l'instant, le contenu est rendu visible.
+
+const cdn = "https://d22po4pjz3o32e.cloudfront.net";
+
+// Blocs de la version mobile (contenu "Beauce")
+const mobileBlocks = [1, 2, 3, 4];
+// Blocs des colonnes de la version desktop (contenu "Tagline")
+const leftBlocks = [1, 3];
+const rightBlocks = [2, 4];
+---
+
+<section class="relative px-[5%] py-16 md:py-24 lg:py-28">
+  <div class="container">
+    <div class="mx-auto max-w-lg text-center">
+      <p class="mb-3 font-semibold md:mb-4">Tagline</p>
+      <h2 class="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+        Short heading goes here
+      </h2>
+      <p class="md:text-md">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+    <div
+      class="mt-12 grid grid-cols-1 items-start gap-12 md:mt-0 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12"
+    >
+      {/* Colonne mobile uniquement */}
+      <div class="relative flex w-full flex-col gap-12 md:hidden md:pt-[60vh]">
+        {
+          mobileBlocks.map((n) => (
+            <div class="md:h-svh">
+              <div class="flex flex-col items-start justify-center md:justify-start">
+                <div class="mb-8 md:hidden">
+                  <img src={`${cdn}/placeholder-image-${n}.svg`} alt={`Relume placeholder image ${n}`} />
+                </div>
+                <p class="mb-3 font-semibold md:mb-4">Beauce</p>
+                <h2 class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+                  Notre base, notre cœur, notre point de départ
+                </h2>
+                <p class="md:text-md">
+                  C'est ici que tout a commencé. Saint-Georges est notre maison.
+                </p>
+                <div class="mt-6 flex items-center gap-x-4 md:mt-8">
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex gap-3 items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-primary text-text-primary bg-background-primary px-6 py-3"
+                    title="Découvrir"
+                  >
+                    Découvrir
+                  </button>
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 text-text-primary gap-2 p-0"
+                    title="Explorer"
+                  >
+                    Explorer
+                    <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Colonne gauche (desktop) */}
+      <div class="relative hidden w-full flex-col gap-12 md:flex md:pt-[60vh]">
+        {
+          leftBlocks.map((n) => (
+            <div class="md:h-svh">
+              <div class="flex flex-col items-start justify-center md:justify-start">
+                <div class="mb-8 md:hidden">
+                  <img src={`${cdn}/placeholder-image-${n}.svg`} alt={`Relume placeholder image ${n}`} />
+                </div>
+                <p class="mb-3 font-semibold md:mb-4">Tagline</p>
+                <h2 class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+                  Medium length section heading goes here
+                </h2>
+                <p class="md:text-md">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse varius enim in eros elementum tristique.
+                </p>
+                <div class="mt-6 flex items-center gap-x-4 md:mt-8">
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex gap-3 items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-primary text-text-primary bg-background-primary px-6 py-3"
+                    title="Button"
+                  >
+                    Button
+                  </button>
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 text-text-primary gap-2 p-0"
+                    title="Button"
+                  >
+                    Button
+                    <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Image centrale fixe (desktop) */}
+      <div
+        class="sticky top-0 hidden h-screen w-full items-center justify-center md:flex"
+      >
+        <div class="aspect-[2/3]">
+          <img
+            src={`${cdn}/placeholder-image-1.svg`}
+            alt="Relume placeholder image 1"
+            class="size-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Colonne droite (desktop) */}
+      <div class="relative hidden w-full flex-col gap-12 md:flex md:pt-[110vh]">
+        {
+          rightBlocks.map((n) => (
+            <div class="md:h-svh">
+              <div class="flex flex-col items-start justify-center md:justify-start">
+                <div class="mb-8 md:hidden">
+                  <img src={`${cdn}/placeholder-image-${n}.svg`} alt={`Relume placeholder image ${n}`} />
+                </div>
+                <p class="mb-3 font-semibold md:mb-4">Tagline</p>
+                <h2 class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
+                  Medium length section heading goes here
+                </h2>
+                <p class="md:text-md">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse varius enim in eros elementum tristique.
+                </p>
+                <div class="mt-6 flex items-center gap-x-4 md:mt-8">
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex gap-3 items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-border-primary text-text-primary bg-background-primary px-6 py-3"
+                    title="Button"
+                  >
+                    Button
+                  </button>
+                  <button
+                    class="focus-visible:ring-border-primary inline-flex items-center justify-center whitespace-nowrap ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 text-text-primary gap-2 p-0"
+                    title="Button"
+                  >
+                    Button
+                    <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
