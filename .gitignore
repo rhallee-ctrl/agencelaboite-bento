@@ -1,5 +1,7 @@
 # build output
 dist/
+# apercu autonome genere (regenerable avec : npm run apercu)
+apercu-anime.html
 # generated types
 .astro/
 
